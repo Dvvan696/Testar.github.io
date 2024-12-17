@@ -289,9 +289,11 @@
             document.getElementById("screenshotImg").style.width = "80vw";
             document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
         }
-        function GetURLParameter(paramName) {
+        
         var urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(paramName);
+        var message = urlParams.get('message');
+        if (message) {
+            Unity.call('SetPlayerPref|message|' + message);
     }
     </script>
 </body>
