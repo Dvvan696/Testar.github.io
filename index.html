@@ -292,7 +292,7 @@
         
         var urlParams = new URLSearchParams(window.location.search);
         var message = urlParams.get('message');
-        if (message) {
+        if (message && typeof Unity !== 'undefined') {
             Unity.call('SetPlayerPref|message|' + message);
     }
     </script>
