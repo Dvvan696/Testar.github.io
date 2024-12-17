@@ -290,11 +290,21 @@
             document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
         }
         
-        var urlParams = new URLSearchParams(window.location.search);
-        var message = urlParams.get('message');
-        if (message && typeof Unity !== 'undefined') {
-            Unity.call('SetPlayerPref|message|' + message);
-    }
+        var unityInstance;
+
+    window.onload = function () {
+        unityInstance = UnityLoader.instantiate("unityContainer", "Build/yourBuild.json", {
+            onProgress: UnityProgress,
+        });
+
+        unityInstance.Module.onRuntimeInitialized = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var message = urlParams.get('message');
+            if (message) {
+                unityInstance.SendMessage('GameObjectName', 'SetMessage', message);
+            }
+        };
+    };
     </script>
 </body>
 </html>
