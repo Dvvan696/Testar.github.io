@@ -42,7 +42,11 @@
      </head>
      <body>
        <a-scene
-         mindar-image="imageTargetSrc: https://dvvan696.github.io/Testar.github.io/targets.mind; filterMinCF:0.00001; filterBeta:1; missTolerance:30"
+       mindar-image="imageTargetSrc: https://dvvan696.github.io/Testar.github.io/targets.mind; 
+       filterMinCF:0.000001; 
+       filterBeta:0.5; 
+       missTolerance:50; 
+       warmupTolerance:10"
          color-space="sRGB"
          renderer="colorManagement: true, physicallyCorrectLights"
          vr-mode-ui="enabled: false"
