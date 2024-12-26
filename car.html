@@ -42,15 +42,19 @@
     </script>
   </head>
   <body>
-    <!-- Пятая сцена -->
+    
+    <!-- Вторая сцена -->
     <a-scene
-      mindar-image="imageTargetSrc: targets1qr.mind; 
-      filterMinCF:0.005; 
-      filterBeta:0.7; 
+      mindar-image="imageTargetSrc: targets2.mind; 
+      filterMinCF:0.0001; 
+      filterBeta:0.1; 
       filterFrequency:40; 
       stabilizer:true; 
       missTolerance:20; 
-      warmupTolerance:10"
+      warmupTolerance:10;
+      uiError:no; 
+      uiLoading:no; 
+      uiScanning:no"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
@@ -58,25 +62,25 @@
     >
       <a-assets>
         <video
-          id="video5"
+          id="video2"
           loop
           muted
           playsinline
           crossorigin="anonymous"
-          src="1.mp4"
+          src="2.mp4"
         ></video>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity 
-        mytarget="videoId: #video5" 
+        mytarget="videoId: #video2" 
         mindar-image-target="targetIndex: 0">
         <a-video
-          src="#video5"
+          src="#video2"
           position="0 0 0"
-          width="0.981"
-          height="0.655"
+          width="0.991"
+          height="0.662"
           rotation="0 0 0"
         ></a-video>
       </a-entity>
